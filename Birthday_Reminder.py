@@ -29,7 +29,14 @@ lastName = ''
 relation = ''
 birthday = ''
 
-# Ask user for input and append to the dictionary
+# open BirthdayData.txt in append mode to write data to
+# use writeBirthdays to store the data
+# need to be able to write each dict key:value pair to the file
+writeBirthdays = open('BirthdayData.txt', 'a')
+
+
+# Ask user for input and append to the dictionary then write it to a file
+# This needs to be in a loop or function. Otherwise, myBirthdays dict gets initialized at every run
 myBirthdays.append({'firstName':input('What is the First Name? ')})
 myBirthdays.append({'lastName':input('What is the Last Name? ')})
 myBirthdays.append({'relation':input('What is your relationship? ')})
