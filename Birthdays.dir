@@ -1,0 +1,4 @@
+'first_name', (0, 20)
+'last_name', (512, 20)
+'relation', (1024, 22)
+'birthday', (1536, 24)

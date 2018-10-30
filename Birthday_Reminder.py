@@ -25,16 +25,6 @@ Once per day...
 Consider using shelf file objects vs dictionaries.
 See the bookmark at https://www.udemy.com/automate/learn/v4/t/lecture/3470542?start=420
 
-+----------------+
-+ EXAMPLE SYNTAX +
-+----------------+
-import shelve # import the shelve module
-birthdayShelf = shelve.open('Birthdays') # creates the shelf file (Birthdays)
-birthdayShelf['first_name'] = [input('Enter First Name: ')] # prompt for first name and store value in  'first_name' key
-birthdayShelf['last_name'] = [input('Enter Last Name: ')] # prompt for last name and store value in 'last_name' key
-birthdayShelf['relation'] = [input('Enter Relation: ')] # prompt for relationship and store value in 'relation' key
-birthdayShelf['birthday'] = [input('Enter Birthday (MM/DD/YYYY): ')] # prompt for first name and store value in 'birthday' key
-
 +------------------------+
 + List all keys in the   +
 + 'Birthdays' shelf file +
@@ -49,7 +39,16 @@ list(birthdayShelf.values())
 
 '''
 
-# [ENTER NEW CODE WITH SHELVE MODULE HERE]
+import shelve
+
+# values are getting overwritten during each run because the keys already exist
+# how to make the data persistent???
+birthdayShelf = shelve.open('Birthdays') # creates the shelf file (Birthdays)
+birthdayShelf['first_name'] = [input('Enter First Name: ')] # prompt for first name and store value in  'first_name' key
+birthdayShelf['last_name'] = [input('Enter Last Name: ')] # prompt for last name and store value in 'last_name' key
+birthdayShelf['relation'] = [input('Enter Relation: ')] # prompt for relationship and store value in 'relation' key
+birthdayShelf['birthday'] = [input('Enter Birthday (MM/DD/YYYY): ')] # prompt for first name and store value in 'birthday' key
+birthdayShelf.close()
 
 
 '''
